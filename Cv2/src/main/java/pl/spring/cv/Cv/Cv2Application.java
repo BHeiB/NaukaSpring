@@ -9,13 +9,13 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 //@ComponentScan(basePackageClasses = Hello.class)
-public class CvApplication {
+public class Cv2Application {
 	
 	@Autowired
 	Hello2 hello;
 
 	public static void main(String[] args) {
-		SpringApplication.run(CvApplication.class, args);
+		SpringApplication.run(Cv2Application.class, args);
 	}
 	
 	@PostConstruct
