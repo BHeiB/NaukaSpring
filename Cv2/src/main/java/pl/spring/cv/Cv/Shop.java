@@ -1,6 +1,7 @@
 package pl.spring.cv.Cv;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -43,6 +44,15 @@ public class Shop {
 	@ResponseBody
 	public String requestBodyExample(@RequestBody Long number) {
 	    return "delivered by RequestBody: " + number;
+	}
+	
+	@RequestMapping("/exampleTransfer")
+	@ResponseBody
+	public String implicitTransfer(HttpServletRequest request) {
+		String browserName = request.getHeader("User-Agent");
+		String ipAddress = request.getRemoteAddr();
+		return browserName + System.lineSeparator() + ipAddress;
+		
 	}
 	
 
